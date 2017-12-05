@@ -1,5 +1,10 @@
-# dubbo & sb project
+# Micro-service-dubbo使用dubbo构建微服务
 
-- 使用dubbo和SpringBoot配置项目
-- zookeeper作为注册中心
-- 持续更新中
+## project modules
+
+- micro-service-dubbo-build:基础构建模块
+- micro-service-dubbo-api：接口
+- micro-service-dubbo-saas：服务消费者
+- micro-serivce-dubbo-paas：服务提供者
+
+
