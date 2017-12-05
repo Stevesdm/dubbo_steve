@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>dubbox_build</artifactId>
+	<artifactId>micro-service-dubbo-build</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>../interface</module>
-		<module>../dubbox_paas</module>
-		<module>../dubbox_saas</module>
+		<module>../micro-service-dubbo-api</module>
+		<module>../micro-service-dubbo-saas</module>
+		<module>../micro-service-dubbo-paas</module>
 	</modules>
 	<packaging>pom</packaging>
 
-	<name>dubbox_build</name>
+	<name>micro-service-dubbo-build</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
