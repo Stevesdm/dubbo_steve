@@ -7,6 +7,6 @@ import com.steve.model.Person;
  */
 public interface PersonService {
 
-    Person getPersonByName(String name);
+    Person getPersonByName(String name) throws InterruptedException;
 
 }
