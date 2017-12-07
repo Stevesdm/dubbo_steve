@@ -9,17 +9,5 @@ public class Constants {
 
     private static final String AUTHOR_NAME= "SteveJobson";
 
-    /**
-     *
-     *
-     * for web
-     *
-     *
-     */
-
-
-
-
-
 
 }

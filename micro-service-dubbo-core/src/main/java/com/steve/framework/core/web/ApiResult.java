@@ -1,8 +1,10 @@
 package com.steve.framework.core.web;
 
+import com.sun.xml.internal.rngom.ast.builder.Include;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.time.DateUtils;
 
 import java.io.Serializable;
 
@@ -16,6 +18,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class ApiResult<T> implements Serializable {
 
+    /**
+     *
+     * 使用FastJson默认不序列化值为null的属性
+     *
+     */
+
 
     public static final String SUCCESS_DESCRIPTION = "成功";
 
@@ -27,9 +35,13 @@ public class ApiResult<T> implements Serializable {
     private int statusCode;
     //返回描述
     private String desc;
+    //成功返回数据
+    private T data;
 
-    private int errorCode;
-
-
+    //失败的构造方法
+    public ApiResult(int statusCode, String desc){
+        this.statusCode = statusCode;
+        this.desc = desc;
+    }
 
 }
