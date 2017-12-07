@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: micro-service-dubbo-paas
+  dubbo:
+    application:
+      name: micro-service-dubbo-paas
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.steve.serviceImpl
+banner:
+  charset: utf-8
+  image:
+    margin: 5
+  location: classpath:config/banner.txt
+logging:
+  config: classpath:config/logback.xml
+
+
+
+
+
+

@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DubboxSaasApplication {
+public class DubboPaasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DubboxSaasApplication.class, args);
+		SpringApplication.run(DubboPaasApplication.class, args);
 	}
 }

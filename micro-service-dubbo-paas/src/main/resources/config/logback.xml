@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
-    <property name="LOG_HOME" value="/var/log/micro-service-dubbo/"/>
-    <property name="contextName" value="saas" />
+    <property name="LOG_HOME" value="/var/log/micro-service-dubbo/paas"/>
+    <property name="contextName" value="paas" />
     <jmxConfigurator />
 
     <!-- 控制台输出 -->
@@ -57,6 +57,5 @@
     <root level="INFO"> <!-- root将级别为“INFO”及大于“INFO”的日志信息交给已经配置好的名为“Console”的appender处理，“Console”appender将信息打印到Console； -->
         <appender-ref ref="Console" /> <!-- 标识这个appender将会添加到这个logger -->
         <appender-ref ref="FILE" />
-        <appender-ref ref="LOGSTASH" />
     </root>
 </configuration>
