@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
  * Created by SteveJobson on 2017/7/13.
  */
 @org.springframework.context.annotation.Configuration
-public class Configuration {
+public class FilterConfig {
 
     @Bean
     public FilterRegistrationBean testFilter() {
