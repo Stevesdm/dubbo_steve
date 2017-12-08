@@ -60,6 +60,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>1.5.9.RELEASE</version>
 			</dependency>
 
 			<dependency>
@@ -73,11 +74,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<version>1.5.4.RELEASE</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework.session</groupId>
-				<artifactId>spring-session</artifactId>
 			</dependency>
 
 			<!-- 使用fastjson代替默认的jackon -->
