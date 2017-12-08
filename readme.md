@@ -12,3 +12,10 @@
     
     cd /micro-serivce-dubbo-monitor/bin
     ./start.sh
+    启动端口：8000
+
+部署dubbo admin
+    cd /micro-service-dubbo-admin
+    把dubbo-admin war包放入tomcat解压
+    修改WEB-INF下的dubbo.properties信息
+    启动tomcat
