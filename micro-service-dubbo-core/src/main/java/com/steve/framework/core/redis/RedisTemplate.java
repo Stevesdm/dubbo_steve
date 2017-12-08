@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @CreateDate: 2017/12/8 下午4:32
  */
 @Component
-public class RedisTemplate  extends StringRedisTemplate{
+public class RedisTemplate extends StringRedisTemplate {
 
 
 }

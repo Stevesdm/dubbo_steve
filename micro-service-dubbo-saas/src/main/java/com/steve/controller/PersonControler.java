@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class PersonControler {
 
-    @Reference(version = "1.0.0",interfaceClass = PersonService.class)
+    @Reference(version = "1.0.0", interfaceClass = PersonService.class)
     public PersonService personService;
 
 

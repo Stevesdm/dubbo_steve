@@ -13,18 +13,19 @@ import org.springframework.stereotype.Component;
  * 根据服务提供者的服务类型设置集群容错机制
  */
 @Component
-@Service(version = "1.0.0",interfaceClass = PersonService.class,timeout = 5000,retries = 2)
+@Service(version = "1.0.0", interfaceClass = PersonService.class, timeout = 5000, retries = 2)
 public class PersonServiceImpl implements PersonService {
 
 
     /**
      * demo sderervice provi
+     *
      * @param name
      * @return
      * @throws InterruptedException
      */
     @Override
     public Person getPersonByName(String name) throws InterruptedException {
-        return new Person("steve",18,"beijing");
+        return new Person("steve", 18, "beijing");
     }
 }

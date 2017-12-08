@@ -18,7 +18,7 @@ public class TestFIlter2 implements Filter {
 
         System.out.println("----------------filter2-------------");
         System.out.println(servletRequest.getRemoteHost());
-        filterChain.doFilter(servletRequest,servletResponse);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

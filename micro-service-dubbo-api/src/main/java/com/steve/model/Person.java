@@ -9,7 +9,6 @@ import java.io.Serializable;
 /**
  * Created by SteveJobson on 2017/7/13.
  */
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

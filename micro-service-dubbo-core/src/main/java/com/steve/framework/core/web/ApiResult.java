@@ -19,9 +19,7 @@ import java.io.Serializable;
 public class ApiResult<T> implements Serializable {
 
     /**
-     *
      * 使用FastJson默认不序列化值为null的属性
-     *
      */
 
 
@@ -39,7 +37,7 @@ public class ApiResult<T> implements Serializable {
     private T data;
 
     //失败的构造方法
-    public ApiResult(int statusCode, String desc){
+    public ApiResult(int statusCode, String desc) {
         this.statusCode = statusCode;
         this.desc = desc;
     }

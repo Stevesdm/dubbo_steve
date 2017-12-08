@@ -7,7 +7,7 @@ package com.steve.framework.core.constant;
  */
 public class Constants {
 
-    private static final String AUTHOR_NAME= "SteveJobson";
+    private static final String AUTHOR_NAME = "SteveJobson";
 
 
 }

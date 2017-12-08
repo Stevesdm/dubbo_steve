@@ -21,6 +21,7 @@ public class FastJsonDefaultConfig {
 
     /**
      * 默认使用FastJosn进行序列化
+     *
      * @return
      */
     @Bean
