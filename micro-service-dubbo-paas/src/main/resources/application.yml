@@ -13,13 +13,46 @@ spring:
       name: dubbo
       port: 20880
     scan: com.steve.serviceImpl
+  datasource:
+    url: jdbc:mysql://localhost:3306/micro_serivce-dubbo?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 3
+      min-idle: 3
+      max-active: 15
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+mapper:
+  mappers: com.steve.common.BaseMapper
+  not-empty: false
+  i-d-e-n-t-i-t-y: MYSQL
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
 banner:
   charset: utf-8
   image:
     margin: 5
   location: classpath:config/banner.txt
+
+
 logging:
   config: classpath:config/logback.xml
+  level:
+    tk:
+      mybatis: DEBUG
+
+
+
 
 
 
