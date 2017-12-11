@@ -1,6 +1,8 @@
 package com.steve.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.steve.framework.core.web.ApiResult;
+import com.steve.framework.core.web.RestStatusCode;
 import com.steve.model.Person;
 import com.steve.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +25,8 @@ public class PersonControler {
 
 
     @RequestMapping(value = "/")
-    public Person getPersonInfo() throws InterruptedException {
-        return personService.getPersonByName("a");
+    public ApiResult<Person> getPersonInfo() throws InterruptedException {
+        return   new ApiResult<Person>(RestStatusCode.SUCCESS.code(),"成功",personService.getPersonByName("a"));
     }
 
 }
