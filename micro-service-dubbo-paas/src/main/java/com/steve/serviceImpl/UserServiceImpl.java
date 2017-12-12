@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public ApiResult<User> getUSerById(int userId) throws InterruptedException {
+    public ApiResult<User> getUSerById(Integer userId) throws InterruptedException {
         User user = userMapper.selectByPrimaryKey(userId);
         return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
     }

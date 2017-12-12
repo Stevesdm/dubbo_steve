@@ -14,7 +14,7 @@ spring:
       port: 20880
     scan: com.steve.serviceImpl
   datasource:
-    url: jdbc:mysql://localhost:3306/micro_serivce-dubbo?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/micro_service_dubbo?useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -28,6 +28,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.steve.model
 mapper:
   mappers: com.steve.common.BaseMapper
   not-empty: false

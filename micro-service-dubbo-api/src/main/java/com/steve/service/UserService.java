@@ -8,6 +8,6 @@ import com.steve.model.User;
  */
 public interface UserService {
 
-    ApiResult<User> getUSerById(int userId) throws InterruptedException;
+    ApiResult<User> getUSerById(Integer userId) throws InterruptedException;
 
 }
