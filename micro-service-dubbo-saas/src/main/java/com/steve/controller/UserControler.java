@@ -5,9 +5,16 @@ import com.steve.framework.core.web.ApiResult;
 import com.steve.framework.core.web.RestStatusCode;
 import com.steve.model.User;
 import com.steve.service.UserService;
+import com.steve.validator.InsertValidatorGroup;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 /**
  * Created by SteveJobson on 2017/7/13.
@@ -34,6 +41,19 @@ public class UserControler {
         }
 
 
+    }
+
+    public ApiResult addUSer(
+            @RequestBody @Validated(InsertValidatorGroup.class) User user, BindingResult bindingResult
+    ){
+        if (bindingResult.hasFieldErrors()) {
+            FieldError fieldError = bindingResult.getFieldError();
+            //TODO
+            System.out.println(fieldError.getDefaultMessage());
+        }
+        //TODO
+
+        return null;
     }
 
 }
