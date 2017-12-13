@@ -15,7 +15,7 @@ import java.util.List;
  * @CreateDate: 2017/12/13 下午5:51
  */
 @Service
-public class CacheLoadService implements Runnable,InitializingBean {
+public class CacheLoadService implements Runnable, InitializingBean {
 
     private static final Logger logger = LoggerFactory.getLogger(CacheLoadService.class);
 
@@ -28,13 +28,13 @@ public class CacheLoadService implements Runnable,InitializingBean {
         logger.info("start load cache");
         long start = System.currentTimeMillis();
         if (cacheInterfaceList != null && cacheInterfaceList.size() > 0) {
-            for (CacheInterface cacheInterface: cacheInterfaceList) {
+            for (CacheInterface cacheInterface : cacheInterfaceList) {
                 cacheInterface.loadCache();
             }
         }
 
         long end = System.currentTimeMillis();
-        logger.info("load cache finished in {}秒 " ,(end-start)/1000);
+        logger.info("load cache finished in {}秒 ", (end - start) / 1000);
     }
 
     @Override

@@ -9,6 +9,7 @@ public interface CacheInterface {
 
     /**
      * 实现接口在应用启动时加载热数据
+     *
      * @return
      */
 

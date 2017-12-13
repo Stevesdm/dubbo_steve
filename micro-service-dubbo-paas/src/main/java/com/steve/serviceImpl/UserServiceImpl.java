@@ -28,22 +28,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public ApiResult<User> getUSerById(int userId) {
         User user = userMapper.selectByPrimaryKey(userId);
-        return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
+        return new ApiResult<User>(RestStatusCode.SUCCESS.code(), "成功", user);
     }
 
     @Override
     public ApiResult<List<User>> listUser() {
         List<User> list = userMapper.selectAll();
-        return new ApiResult<List<User>>(RestStatusCode.SUCCESS.code(),"成功",list);
+        return new ApiResult<List<User>>(RestStatusCode.SUCCESS.code(), "成功", list);
     }
 
     @Override
     public ApiResult<User> insertUser(User user) {
         int result = userMapper.insert(user);
-        if (result ==1 ) {
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"新增失败");
+        if (result == 1) {
+            return new ApiResult<User>(RestStatusCode.SUCCESS.code(), "成功", user);
+        } else {
+            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "新增失败");
         }
 
     }
@@ -51,10 +51,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public ApiResult<User> updateUser(User user) {
         int result = userMapper.updateByPrimaryKeySelective(user);
-        if (result ==1 ) {
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"更新失败");
+        if (result == 1) {
+            return new ApiResult<User>(RestStatusCode.SUCCESS.code(), "成功", user);
+        } else {
+            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "更新失败");
         }
 
     }
@@ -62,10 +62,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public ApiResult deleteUser(int userId) {
         int result = userMapper.deleteByPrimaryKey(userId);
-        if (result ==1 ) {
-            return new ApiResult(RestStatusCode.SUCCESS.code(),"成功");
-        }else {
-            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"删除失败");
+        if (result == 1) {
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功");
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "删除失败");
         }
 
     }

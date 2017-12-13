@@ -34,14 +34,14 @@ public class UserControler {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public ApiResult<User> getUser(
             @RequestParam(value = "userId") Integer userId
-    ){
+    ) {
         User user = null;
         ApiResult<User> result = userService.getUSerById(userId);
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {
             user = result.getData();
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"调用UserService dubbo接口失败");
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功", user);
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "调用UserService dubbo接口失败");
         }
 
     }
@@ -53,9 +53,9 @@ public class UserControler {
         ApiResult<List<User>> result = userService.listUser();
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {
             List<User> list = result.getData();
-            return new ApiResult<List<User>>(RestStatusCode.SUCCESS.code(),"成功",list);
-        }else {
-            return new ApiResult<List<User>>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"调用UserService dubbo接口失败");
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功", list);
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "调用UserService dubbo接口失败");
         }
 
     }
@@ -63,18 +63,18 @@ public class UserControler {
     @RequestMapping(value = "/user", method = RequestMethod.PUT)
     public ApiResult addUSer(
             @RequestBody @Validated(InsertValidatorGroup.class) User user, BindingResult bindingResult
-    ){
+    ) {
         if (bindingResult.hasFieldErrors()) {
             FieldError fieldError = bindingResult.getFieldError();
             System.out.println(fieldError.getDefaultMessage());
-            return new ApiResult(RestStatusCode.BAD_REQUEST.code(),fieldError.getDefaultMessage());
+            return new ApiResult(RestStatusCode.BAD_REQUEST.code(), fieldError.getDefaultMessage());
         }
         ApiResult<User> result = userService.insertUser(user);
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {
             user = result.getData();
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"调用UserService dubbo接口失败");
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功", user);
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "调用UserService dubbo接口失败");
         }
     }
 
@@ -82,36 +82,35 @@ public class UserControler {
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public ApiResult updateUSer(
             @RequestBody @Validated(UpdateValidatorGroup.class) User user, BindingResult bindingResult
-    ){
+    ) {
         if (bindingResult.hasFieldErrors()) {
             FieldError fieldError = bindingResult.getFieldError();
             System.out.println(fieldError.getDefaultMessage());
-            return new ApiResult(RestStatusCode.BAD_REQUEST.code(),fieldError.getDefaultMessage());
+            return new ApiResult(RestStatusCode.BAD_REQUEST.code(), fieldError.getDefaultMessage());
         }
         ApiResult<User> result = userService.updateUser(user);
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {
             user = result.getData();
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"调用UserService dubbo接口失败");
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功", user);
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "调用UserService dubbo接口失败");
         }
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.DELETE)
     public ApiResult deleteUSer(
             @RequestBody @Validated(DeleteValidatorGroup.class) User user, BindingResult bindingResult
-    ){
+    ) {
         if (bindingResult.hasFieldErrors()) {
             FieldError fieldError = bindingResult.getFieldError();
             System.out.println(fieldError.getDefaultMessage());
-            return new ApiResult(RestStatusCode.BAD_REQUEST.code(),fieldError.getDefaultMessage());
+            return new ApiResult(RestStatusCode.BAD_REQUEST.code(), fieldError.getDefaultMessage());
         }
         ApiResult<User> result = userService.deleteUser(user.getUserId());
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {
-            user = result.getData();
-            return new ApiResult<User>(RestStatusCode.SUCCESS.code(),"成功",user);
-        }else {
-            return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(),"调用UserService dubbo接口失败");
+            return new ApiResult(RestStatusCode.SUCCESS.code(), "成功");
+        } else {
+            return new ApiResult(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "调用UserService dubbo接口失败");
         }
     }
 

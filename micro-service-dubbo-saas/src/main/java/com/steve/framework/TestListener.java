@@ -20,7 +20,7 @@ public class TestListener implements ServletContextListener {
         long start = System.currentTimeMillis();
         logger.info("系统启动中。。");
         long end = System.currentTimeMillis();
-        logger.info("启动完毕："+(end-start));
+        logger.info("启动完毕：" + (end - start));
     }
 
     @Override

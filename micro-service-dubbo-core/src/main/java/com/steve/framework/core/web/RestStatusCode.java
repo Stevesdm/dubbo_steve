@@ -35,11 +35,11 @@ public enum RestStatusCode {
 
     private int code;
 
-    RestStatusCode(int code){
+    RestStatusCode(int code) {
         this.code = code;
     }
 
-    public int code(){
+    public int code() {
         return this.code;
     }
 
