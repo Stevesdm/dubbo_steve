@@ -1,6 +1,6 @@
 package com.steve.model;
 
-import com.steve.validator.InsertValidatorGroup;
+import com.steve.framework.core.validator.InsertValidatorGroup;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
