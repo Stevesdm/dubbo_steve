@@ -10,6 +10,9 @@ import com.steve.model.User;
 import com.steve.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -28,7 +31,10 @@ public class UserControler {
     private static final Logger logger = LoggerFactory.getLogger(UserControler.class);
 
     @Reference(version = "1.0.0", interfaceClass = UserService.class)
-    public UserService userService;
+    private UserService userService;
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -49,6 +55,11 @@ public class UserControler {
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public ApiResult<List<User>> getUsers() {
+
+        //RedisTemplate.REDIS_DB_INDEX.set(10);
+        redisTemplate.opsForValue().set("demouser","11111");
+
+
         User user = null;
         ApiResult<List<User>> result = userService.listUser();
         if (RestStatusCode.SUCCESS.code() == result.getStatus()) {

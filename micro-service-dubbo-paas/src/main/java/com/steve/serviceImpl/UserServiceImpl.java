@@ -7,6 +7,7 @@ import com.steve.framework.core.web.RestStatusCode;
 import com.steve.model.User;
 import com.steve.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
 
     @Override
     public ApiResult<User> getUSerById(int userId) {
