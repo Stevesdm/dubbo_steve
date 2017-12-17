@@ -23,12 +23,12 @@ public class RedisConfig {
     }
 
     @Bean
-    public RedisTemplate initRedisTemplate(RedisConnectionFactory redisConnectionFactory,RedisSerializer fastJson2JsonRedisSerializer) throws Exception{
+    public RedisTemplate initRedisTemplate(RedisConnectionFactory redisConnectionFactory, RedisSerializer fastJson2JsonRedisSerializer) throws Exception {
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         redisTemplate.setValueSerializer(fastJson2JsonRedisSerializer);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.afterPropertiesSet();
-        return  redisTemplate;
+        return redisTemplate;
     }
 }

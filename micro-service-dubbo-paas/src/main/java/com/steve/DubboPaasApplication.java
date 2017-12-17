@@ -14,6 +14,6 @@ public class DubboPaasApplication {
     public static void main(String[] args) {
 
 
-          ApplicationContext ctx = SpringApplication.run(DubboPaasApplication.class, args);
+        ApplicationContext ctx = SpringApplication.run(DubboPaasApplication.class, args);
     }
 }

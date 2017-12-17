@@ -57,7 +57,7 @@ public class UserControler {
     public ApiResult<List<User>> getUsers() {
 
         //RedisTemplate.REDIS_DB_INDEX.set(10);
-        redisTemplate.opsForValue().set("demouser","11111");
+        redisTemplate.opsForValue().set("demouser", "11111");
 
 
         User user = null;

@@ -5,6 +5,7 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 
@@ -16,8 +17,8 @@ import java.util.List;
  * @Author: stevejobson
  * @CreateDate: 2017/12/7 下午10:08
  */
+@Configuration
 public class FastJsonDefaultConfig {
-
 
     /**
      * 默认使用FastJosn进行序列化
