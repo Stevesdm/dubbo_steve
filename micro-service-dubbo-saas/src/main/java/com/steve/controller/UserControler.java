@@ -1,6 +1,7 @@
 package com.steve.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.steve.framework.RedisTemplate;
 import com.steve.framework.core.validator.DeleteValidatorGroup;
 import com.steve.framework.core.validator.InsertValidatorGroup;
 import com.steve.framework.core.validator.UpdateValidatorGroup;
@@ -11,7 +12,6 @@ import com.steve.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -56,8 +56,8 @@ public class UserControler {
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public ApiResult<List<User>> getUsers() {
 
-        //RedisTemplate.REDIS_DB_INDEX.set(10);
-        redisTemplate.opsForValue().set("demouser", "11111");
+        RedisTemplate.REDIS_DB_INDEX.set(10);
+        redisTemplate.opsForValue().set("demouser","11111");
 
 
         User user = null;

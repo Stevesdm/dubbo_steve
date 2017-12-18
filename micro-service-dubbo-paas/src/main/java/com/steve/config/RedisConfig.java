@@ -1,23 +1,21 @@
 package com.steve.config;
 
-import com.alibaba.dubbo.common.serialize.support.json.FastJsonSerialization;
 import com.steve.framework.RedisTemplate;
 import com.steve.framework.core.redis.FastJson2JsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @Description:
  * @Author: stevejobson
- * @CreateDate: 2017/12/15 上午11:37
+ * @CreateDate: 2017/12/18 下午5:56
  */
 @Configuration
 public class RedisConfig {
+
 
     @Bean
     public RedisSerializer fastJson2JsonRedisSerializer() {
