@@ -6,9 +6,12 @@ import com.steve.framework.core.web.ApiResult;
 import com.steve.framework.core.web.RestStatusCode;
 import com.steve.model.User;
 import com.steve.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,10 +21,14 @@ import java.util.List;
 
 /**
  * 根据服务提供者的服务类型设置集群容错机制
+ *
+ *
  */
 @Component
 @Service(version = "1.0.0", interfaceClass = UserService.class, timeout = 5000, retries = 2)
 public class UserServiceImpl implements UserService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserMapper userMapper;
@@ -41,7 +48,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ApiResult<User> insertUser(User user) {
+
         int result = userMapper.insert(user);
+
         if (result == 1) {
             return new ApiResult<User>(RestStatusCode.SUCCESS.code(), "成功", user);
         } else {

@@ -19,3 +19,8 @@
     把dubbo-admin war包放入tomcat解压
     修改WEB-INF下的dubbo.properties信息
     启动tomcat
+
+
+
+warning:
+    dubbo服务如果添加事务支持，则服务不能发布，需要修改实现
