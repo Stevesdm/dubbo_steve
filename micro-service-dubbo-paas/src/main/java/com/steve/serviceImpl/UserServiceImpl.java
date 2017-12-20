@@ -24,8 +24,7 @@ import java.util.List;
  *
  *
  */
-@Component
-@Service(version = "1.0.0", interfaceClass = UserService.class, timeout = 5000, retries = 2)
+@Service
 public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -47,6 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ApiResult<User> insertUser(User user) {
 
         int result = userMapper.insert(user);
@@ -56,10 +56,10 @@ public class UserServiceImpl implements UserService {
         } else {
             return new ApiResult<User>(RestStatusCode.INTERNAL_SERVER_ERROR.code(), "新增失败");
         }
-
     }
 
     @Override
+    @Transactional
     public ApiResult<User> updateUser(User user) {
         int result = userMapper.updateByPrimaryKeySelective(user);
         if (result == 1) {

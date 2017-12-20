@@ -38,7 +38,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.dubbo.springboot</groupId>
+            <groupId>com.gitee.reger</groupId>
             <artifactId>spring-boot-starter-dubbo</artifactId>
         </dependency>
 

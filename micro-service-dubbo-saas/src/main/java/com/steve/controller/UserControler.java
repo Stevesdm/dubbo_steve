@@ -30,7 +30,7 @@ public class UserControler {
 
     private static final Logger logger = LoggerFactory.getLogger(UserControler.class);
 
-    @Reference(version = "1.0.0", interfaceClass = UserService.class)
+    @Reference
     private UserService userService;
 
     @Autowired

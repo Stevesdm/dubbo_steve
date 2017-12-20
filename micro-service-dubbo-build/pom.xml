@@ -28,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
+        <dubbo-spring-boot>1.0.9</dubbo-spring-boot>
     </properties>
 
     <dependencyManagement>
@@ -46,7 +46,7 @@
             </dependency>
 
             <dependency>
-                <groupId>io.dubbo.springboot</groupId>
+                <groupId>com.gitee.reger</groupId>
                 <artifactId>spring-boot-starter-dubbo</artifactId>
                 <version>${dubbo-spring-boot}</version>
             </dependency>

@@ -8,11 +8,13 @@ spring:
     application:
       name: micro-service-dubbo-paas
     registry:
-      address: zookeeper://127.0.0.1:2181
+      protocol: zookeeper
+      address: 127.0.0.1
+      port: 2181
     protocol:
       name: dubbo
       port: 20880
-    scan: com.steve.serviceImpl
+    base-package: com.steve.serviceImpl
   datasource:
     url: jdbc:mysql://localhost:3306/micro_service_dubbo?useUnicode=true&characterEncoding=utf8
     username: root
