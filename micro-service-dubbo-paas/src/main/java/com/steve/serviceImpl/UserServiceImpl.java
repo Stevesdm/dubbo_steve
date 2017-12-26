@@ -21,8 +21,6 @@ import java.util.List;
 
 /**
  * 根据服务提供者的服务类型设置集群容错机制
- *
- *
  */
 @Service
 public class UserServiceImpl implements UserService {

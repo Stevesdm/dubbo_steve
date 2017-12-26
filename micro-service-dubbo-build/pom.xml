@@ -11,6 +11,7 @@
         <module>../micro-service-dubbo-saas</module>
         <module>../micro-service-dubbo-paas</module>
         <module>../micro-service-dubbo-core</module>
+        <module>../micro-service-dubbo-interface</module>
     </modules>
     <packaging>pom</packaging>
 

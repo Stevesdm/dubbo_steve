@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 public class RedisTemplate extends StringRedisTemplate {
 
-    public static ThreadLocal<Integer> REDIS_DB_INDEX = new ThreadLocal<Integer>(){
+    public static ThreadLocal<Integer> REDIS_DB_INDEX = new ThreadLocal<Integer>() {
         @Override
         protected Integer initialValue() {
             return 0;

@@ -1,0 +1,39 @@
+server:
+  port: 8083
+
+
+spring:
+  application:
+    name: micro-service-dubbo-interface
+  dubbo:
+    application:
+      name: micro-service-dubbo-interface
+    registry:
+      protocol: zookeeper
+      address: 127.0.0.1
+      port: 2181
+    base-package: com.steve
+    protocol: dubbo
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    pool:
+      max-active: 8
+      max-wait: 5000
+      max-idle: 8
+      min-idle: 3
+    timeout: 5000
+
+
+#  banner
+banner:
+  charset: utf-8
+  image:
+    margin: 5
+  location: classpath:config/banner.txt
+
+# logging
+logging:
+  config: classpath:config/logback.xml
+
