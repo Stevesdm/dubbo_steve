@@ -15,20 +15,20 @@ import javax.annotation.security.RolesAllowed;
 public class DemoController {
 
 
-    @RequestMapping(value = {"/","/home"})
+    @RequestMapping(value = {"/", "/home"})
     @RolesAllowed("user")
-    public ModelAndView home(){
+    public ModelAndView home() {
         return new ModelAndView("home");
     }
 
 
     @RequestMapping(value = "/hello")
-    public ModelAndView hello(){
+    public ModelAndView hello() {
         return new ModelAndView("hello");
     }
 
     @RequestMapping(value = "/login")
-    public ModelAndView login(){
+    public ModelAndView login() {
         return new ModelAndView("login");
     }
 

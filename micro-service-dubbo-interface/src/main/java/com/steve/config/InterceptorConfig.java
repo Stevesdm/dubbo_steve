@@ -17,7 +17,7 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
 
 
     @Bean
-    public ApiFrequencyInterceptor apiFrequencyInterceptor(){
+    public ApiFrequencyInterceptor apiFrequencyInterceptor() {
         return new ApiFrequencyInterceptor();
     }
 

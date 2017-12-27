@@ -18,7 +18,7 @@ public class DemoController {
 
     @ApiOperation(value = "测试文档", notes = "")
     @RequestMapping(value = "/getDate")
-    public Date date(){
+    public Date date() {
         return new Date();
     }
 }

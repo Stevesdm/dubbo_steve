@@ -42,22 +42,22 @@ public class ApiFrequencyInterceptor extends HandlerInterceptorAdapter {
         RedisTemplate.REDIS_DB_INDEX.set(10);
         ValueOperations valueOperations = redisTemplate.opsForValue();
         boolean keyExist = valueOperations.getOperations().hasKey(cacheUriKey);
-        if (keyExist){
+        if (keyExist) {
             RedisTemplate.REDIS_DB_INDEX.set(10);
-            valueOperations.increment(cacheUriKey,1);
-        }else{
+            valueOperations.increment(cacheUriKey, 1);
+        } else {
             RedisTemplate.REDIS_DB_INDEX.set(10);
-            valueOperations.increment(cacheUriKey,1);
-            redisTemplate.expire(cacheUriKey,1, TimeUnit.MINUTES);
+            valueOperations.increment(cacheUriKey, 1);
+            redisTemplate.expire(cacheUriKey, 1, TimeUnit.MINUTES);
         }
 
         RedisTemplate.REDIS_DB_INDEX.set(10);
-        if ( Long.parseLong(redisTemplate.opsForValue().get(cacheUriKey))> interfaceFrequencyLimit){
+        if (Long.parseLong(redisTemplate.opsForValue().get(cacheUriKey)) > interfaceFrequencyLimit) {
             httpServletResponse.setContentType("text/html;charset=UTF-8");
             httpServletResponse.getWriter().write("超过接口访问频次限制，请稍后再试");
             httpServletResponse.getWriter().flush();
             return false;
-        }else{
+        } else {
             return true;
         }
 
@@ -74,9 +74,9 @@ public class ApiFrequencyInterceptor extends HandlerInterceptorAdapter {
     }
 
 
-    private String getCacheUri(HttpServletRequest httpServletRequest){
+    private String getCacheUri(HttpServletRequest httpServletRequest) {
         String requestUri = httpServletRequest.getRequestURI();
-        String cacheUri = String.format(CacheKey.MICRO_SERVICE_INTERFACE_FREQUENCY_LIMIT_URI,requestUri);
+        String cacheUri = String.format(CacheKey.MICRO_SERVICE_INTERFACE_FREQUENCY_LIMIT_URI, requestUri);
         return cacheUri;
     }
 }

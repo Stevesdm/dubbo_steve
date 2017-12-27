@@ -15,32 +15,32 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  */
 
 
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .authorizeRequests()
+                .authorizeRequests()
                 .antMatchers("/", "/home")
-                    .permitAll()
-                    .anyRequest()
-                    .authenticated()
+                .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
                 .csrf()
-                    .disable()
+                .disable()
                 .formLogin()
-                    .loginPage("/login")
-                    .permitAll()
+                .loginPage("/login")
+                .permitAll()
                 .and()
                 .logout()
-                    .permitAll();
+                .permitAll();
     }
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .inMemoryAuthentication()
+                .inMemoryAuthentication()
                 .withUser("admin").password("admin").roles("USER");
     }
 
