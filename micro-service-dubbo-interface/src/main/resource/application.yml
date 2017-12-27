@@ -37,3 +37,8 @@ banner:
 logging:
   config: classpath:config/logback.xml
 
+steve:
+  interface:
+    frequency: 5
+
+

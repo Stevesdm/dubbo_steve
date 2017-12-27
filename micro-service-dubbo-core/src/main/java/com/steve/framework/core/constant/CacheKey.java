@@ -7,5 +7,5 @@ package com.steve.framework.core.constant;
  */
 public class CacheKey {
 
-
+    public static final String MICRO_SERVICE_INTERFACE_FREQUENCY_LIMIT_URI = "micro_service:interface:frequency:limit:%s";
 }
