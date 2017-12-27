@@ -1,5 +1,6 @@
 package com.steve.api;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,8 @@ import java.util.Date;
 @RestController
 public class DemoController {
 
+
+    @ApiOperation(value = "测试文档", notes = "")
     @RequestMapping(value = "/getDate")
     public Date date(){
         return new Date();
