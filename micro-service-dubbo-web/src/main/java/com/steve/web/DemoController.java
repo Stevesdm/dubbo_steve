@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
+
 /**
  * @Description:
  * @Author: stevejobson
@@ -14,6 +16,7 @@ public class DemoController {
 
 
     @RequestMapping(value = {"/","/home"})
+    @RolesAllowed("user")
     public ModelAndView home(){
         return new ModelAndView("home");
     }
