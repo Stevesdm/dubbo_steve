@@ -4,9 +4,10 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     @Id
     @Column(name = "user_id")
     private Integer userId;

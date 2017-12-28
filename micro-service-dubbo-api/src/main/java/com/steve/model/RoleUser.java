@@ -1,9 +1,10 @@
 package com.steve.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "role_user")
-public class RoleUser {
+public class RoleUser implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

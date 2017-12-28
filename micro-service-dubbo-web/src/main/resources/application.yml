@@ -1,7 +1,6 @@
 server:
   port: 8084
 
-
 spring:
   application:
     name: micro-service-dubbo-web
@@ -26,13 +25,10 @@ spring:
     timeout: 5000
   session:
     store-type: redis
-
-
-spring:
   thymeleaf:
-    prefix: classpath:/templates/
-    suffix: html
-    cache: false
+      cache: false
+
+
 
 #  banner
 banner:
@@ -44,4 +40,3 @@ banner:
 # logging
 logging:
   config: classpath:config/logback.xml
-

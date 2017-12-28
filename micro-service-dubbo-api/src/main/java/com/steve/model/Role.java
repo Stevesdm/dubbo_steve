@@ -6,9 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Role {
+public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -75,5 +76,16 @@ public class Role {
      */
     public void setCreatetime(Date createtime) {
         this.createtime = createtime;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id=" + id +
+                ", roleName='" + roleName + '\'' +
+                ", desc='" + desc + '\'' +
+                ", createtime=" + createtime +
+                '}';
     }
 }
