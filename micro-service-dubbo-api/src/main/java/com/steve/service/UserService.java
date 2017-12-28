@@ -21,4 +21,7 @@ public interface UserService {
     ApiResult deleteUser(int userId);
 
 
+    User getUserByName(String username);
+
+
 }
