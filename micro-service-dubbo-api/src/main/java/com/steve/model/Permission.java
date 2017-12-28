@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Permission implements Serializable{
+public class Permission implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -26,7 +26,7 @@ public class Permission implements Serializable{
     @Column(name = "parent_id")
     private Integer parentId;
 
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 
     /**

@@ -39,8 +39,7 @@ public class SteveUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User user = userService.getUserByName(username);
-        if (user != null){
-
+        if (user != null) {
 
 
             //基于权限的访问控制
@@ -57,16 +56,16 @@ public class SteveUserService implements UserDetailsService {
             //基于角色的访问控制
             List<Role> roles = roleService.getRoleByUserId(user.getUserId());
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-            for (Role role : roles){
-                if (role != null && role.getRoleName() != null ){
+            for (Role role : roles) {
+                if (role != null && role.getRoleName() != null) {
                     GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRoleName());
                     grantedAuthorities.add(grantedAuthority);
                 }
             }
-        return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword(),grantedAuthorities);
+            return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), grantedAuthorities);
 
 
-        }else{
+        } else {
             throw new UsernameNotFoundException(username + "do not exist!");
         }
     }

@@ -23,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-    public SteveUserService getSteveUserService(){
+    public SteveUserService getSteveUserService() {
         return new SteveUserService();
     }
 

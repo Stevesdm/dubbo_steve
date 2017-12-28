@@ -19,7 +19,7 @@ public class Role implements Serializable {
 
     private String desc;
 
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 
     /**

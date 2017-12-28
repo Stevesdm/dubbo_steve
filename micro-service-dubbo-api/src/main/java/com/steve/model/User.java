@@ -21,7 +21,7 @@ public class User implements Serializable {
 
     private String salt;
 
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 
     /**
