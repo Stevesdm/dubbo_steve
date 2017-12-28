@@ -7,7 +7,6 @@ import com.steve.framework.core.validator.InsertValidatorGroup;
 import com.steve.framework.core.validator.UpdateValidatorGroup;
 import com.steve.framework.core.web.ApiResult;
 import com.steve.framework.core.web.RestStatusCode;
-import com.steve.model.User;
 import com.steve.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +17,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 /**

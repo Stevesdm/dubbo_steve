@@ -16,7 +16,7 @@ spring:
       port: 20880
     base-package: com.steve.serviceImpl
   datasource:
-    url: jdbc:mysql://localhost:3306/micro_service_dubbo?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/micro_service_dubbo?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
