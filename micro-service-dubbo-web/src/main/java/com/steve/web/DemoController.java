@@ -1,7 +1,9 @@
 package com.steve.web;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.security.RolesAllowed;
@@ -30,6 +32,13 @@ public class DemoController {
     @RequestMapping(value = "/login")
     public ModelAndView login() {
         return new ModelAndView("login");
+    }
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping("/demo")
+    @ResponseBody
+    public String demo (){
+        return "demo";
     }
 
 }
