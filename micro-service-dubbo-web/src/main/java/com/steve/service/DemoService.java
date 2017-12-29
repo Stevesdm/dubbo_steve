@@ -14,7 +14,7 @@ public class DemoService {
 
 
     @RolesAllowed("ROLE_ADMIN")
-    public String  test(){
+    public String test() {
         return "hello";
     }
 }

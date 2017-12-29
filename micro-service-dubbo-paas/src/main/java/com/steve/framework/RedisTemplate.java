@@ -11,6 +11,11 @@ import org.springframework.data.redis.core.StringRedisTemplate;
  */
 public class RedisTemplate extends StringRedisTemplate {
 
+
+    /**
+     * 生产环境尽量避切库操作，影响性能，通过合理的配置cachekey
+     */
+
     public static ThreadLocal<Integer> REDIS_DB_INDEX = new ThreadLocal<Integer>() {
         @Override
         protected Integer initialValue() {

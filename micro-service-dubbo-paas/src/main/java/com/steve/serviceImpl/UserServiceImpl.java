@@ -42,7 +42,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public ApiResult<User> insertUser(User user) {
 
         int result = userMapper.insert(user);
@@ -55,7 +54,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public ApiResult<User> updateUser(User user) {
         int result = userMapper.updateByPrimaryKeySelective(user);
         if (result == 1) {

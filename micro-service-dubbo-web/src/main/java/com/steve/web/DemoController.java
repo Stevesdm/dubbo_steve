@@ -41,7 +41,7 @@ public class DemoController {
 
     @RequestMapping("/demo")
     @ResponseBody
-    public String demo (){
+    public String demo() {
 
         return demoService.test();
     }

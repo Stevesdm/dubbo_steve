@@ -23,6 +23,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class ApiFrequencyInterceptor extends HandlerInterceptorAdapter {
 
+    //接口访问频次限制
+
     private static final Logger logger = LoggerFactory.getLogger(ApiFrequencyInterceptor.class);
 
     @Value("${steve.interface.frequency}")

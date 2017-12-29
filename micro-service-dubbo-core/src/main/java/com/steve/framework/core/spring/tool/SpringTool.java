@@ -16,6 +16,7 @@ public class SpringTool implements ApplicationContextAware {
     private static ApplicationContext ac = null;
     private static SpringTool SpringTool = null;
 
+    //实现ApplicationContextAware接口的setApplicationContext方法，获取ApplicationContext
     public synchronized static SpringTool init() {
         if (SpringTool == null) {
             SpringTool = new SpringTool();
@@ -28,6 +29,8 @@ public class SpringTool implements ApplicationContextAware {
         ac = applicationContext;
     }
 
+
+    //获取Bean
     public synchronized static Object getBean(String beanName) {
         return ac.getBean(beanName);
     }

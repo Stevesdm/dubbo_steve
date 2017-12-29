@@ -7,6 +7,7 @@ import com.steve.framework.core.validator.InsertValidatorGroup;
 import com.steve.framework.core.validator.UpdateValidatorGroup;
 import com.steve.framework.core.web.ApiResult;
 import com.steve.framework.core.web.RestStatusCode;
+import com.steve.model.User;
 import com.steve.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ public class UserControler {
     private UserService userService;
 
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private RedisTemplate redisTemplate;
 
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)

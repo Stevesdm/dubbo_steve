@@ -4,6 +4,7 @@ import com.steve.framework.TestFIlter2;
 import com.steve.framework.TestFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 
 /**
  * Created by SteveJobson on 2017/7/13.
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 public class FilterConfig {
 
     @Bean
+    @Order(1)
     public FilterRegistrationBean testFilter() {
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new TestFilter());
@@ -22,6 +24,7 @@ public class FilterConfig {
     }
 
     @Bean
+    @Order(2)
     public FilterRegistrationBean testFilter1() {
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new TestFIlter2());

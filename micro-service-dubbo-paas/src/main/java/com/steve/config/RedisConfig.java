@@ -1,5 +1,6 @@
 package com.steve.config;
 
+import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import com.steve.framework.RedisTemplate;
 import com.steve.framework.core.redis.FastJson2JsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
@@ -26,8 +27,8 @@ public class RedisConfig {
     public RedisTemplate initRedisTemplate(RedisConnectionFactory redisConnectionFactory, RedisSerializer fastJson2JsonRedisSerializer) throws Exception {
         RedisTemplate redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
-        redisTemplate.setHashKeySerializer(fastJson2JsonRedisSerializer);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashValueSerializer(fastJson2JsonRedisSerializer());
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
