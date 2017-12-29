@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface UserService {
 
+    
     ApiResult<User> getUSerById(int userId);
 
     ApiResult<List<User>> listUser();

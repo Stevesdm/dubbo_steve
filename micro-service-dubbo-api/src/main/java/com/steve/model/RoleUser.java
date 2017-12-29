@@ -1,9 +1,16 @@
 package com.steve.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Table(name = "role_user")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class RoleUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,45 +22,4 @@ public class RoleUser implements Serializable {
     @Column(name = "role_id")
     private Integer roleId;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * @return user_id
-     */
-    public Integer getUserId() {
-        return userId;
-    }
-
-    /**
-     * @param userId
-     */
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    /**
-     * @return role_id
-     */
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    /**
-     * @param roleId
-     */
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
 }
