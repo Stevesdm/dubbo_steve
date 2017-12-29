@@ -1,5 +1,7 @@
 package com.steve.web;
 
+import com.steve.service.DemoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,9 @@ import javax.annotation.security.RolesAllowed;
  */
 @Controller
 public class DemoController {
+
+    @Autowired
+    DemoService demoService;
 
 
     @RequestMapping(value = {"/", "/home"})
@@ -34,11 +39,11 @@ public class DemoController {
         return new ModelAndView("login");
     }
 
-    @Secured("ROLE_ADMIN")
     @RequestMapping("/demo")
     @ResponseBody
     public String demo (){
-        return "demo";
+
+        return demoService.test();
     }
 
 }
