@@ -22,16 +22,9 @@ public class DemoController {
     DemoService demoService;
 
 
-    @RequestMapping(value = {"/", "/home"})
-    @RolesAllowed("user")
-    public ModelAndView home() {
-        return new ModelAndView("home");
-    }
-
-
-    @RequestMapping(value = "/hello")
+    @RequestMapping(value = "/home")
     public ModelAndView hello() {
-        return new ModelAndView("hello");
+        return new ModelAndView("home");
     }
 
     @RequestMapping(value = "/login")
