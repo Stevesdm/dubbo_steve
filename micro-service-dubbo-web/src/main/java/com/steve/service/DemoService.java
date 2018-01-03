@@ -1,5 +1,7 @@
 package com.steve.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.security.RolesAllowed;
@@ -13,8 +15,13 @@ import javax.annotation.security.RolesAllowed;
 public class DemoService {
 
 
+    //通过这种方式加密密码
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
     @RolesAllowed("ROLE_ADMIN")
     public String test() {
-        return "hello";
+        return passwordEncoder.encode("admin");
     }
 }
