@@ -27,6 +27,12 @@
         <javaClientGenerator targetPackage="com.steve.dao" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
+        <!--不要注释-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
         <table tableName="%">
             <!--mysql 配置-->
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
