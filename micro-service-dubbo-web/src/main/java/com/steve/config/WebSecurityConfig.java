@@ -65,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                //关闭csrf，对很多功能都有影响，可以自己实现
                 .csrf().disable()
                 .authorizeRequests()
                 .anyRequest()
