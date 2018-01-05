@@ -42,7 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //使用默认的加密方式
     @Bean
     public org.springframework.security.crypto.password.PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        //密码加密强度
+        return new BCryptPasswordEncoder(10);
     }
 
     @Bean
