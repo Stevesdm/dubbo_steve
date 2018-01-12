@@ -1,7 +1,9 @@
 package com.steve;
 
+import com.steve.service.LogService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -14,6 +16,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class WebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+
+
+        ApplicationContext context = SpringApplication.run(WebApplication.class, args);
+        context.getBean(LogService.class).info();
     }
 }
